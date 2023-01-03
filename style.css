@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: rgb(103, 102, 102);
+  font-family: serif;
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+h2::after {
+  content: "Top";
+  background-color: rgb(247, 247, 88);
+  color: black;
+  font-size: 17px;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -30px;
+}
+h3 {
+  font-size: 40px;
+  margin: 30px 0;
+}
+/* this h3+p select the paragraph element after h3 element (it's sibling) means have same parent */
+h3 + p {
+  /* color: tomato; */
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+p::first-line {
+  /* it select first line of p element */
+  /* color: hotpink; */
+}
+ul,
+ol {
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 16px;
+  /* A word important has the highest priority on the iD */
+  /* color: green !important; */
+}
+.copyright {
+  /* color: orangered; */
+  font-size: 16px;
+}
+
+/* article header p {font-style: italic;} */
+.author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* ul {list-style-type: none;} */
+.related {
+  list-style-type: none;
+}
+
+.related-author {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 25px;
+  width: 300px;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+  margin-bottom: 0;
+}
+li:nth-child(even) {
+  /* color: red; */
+}
+
+/*missconception: this won't work */
+
+article p:first-child {
+  /* color: rgb(57, 139, 30); */
+}
+article p:last-child {
+  /* color: red; */
+}
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  color: #1098ad;
+}
+a:hover {
+  color: aquamarine;
+  text-decoration: underline dashed black; /*shorthand*/
+}
+a:active {
+  background-color: gray;
+}
+.post-img {
+  width: 100%;
+  /* height:auto will adapt height related to img width */
+  height: auto;
+}
+button {
+  font-size: 20px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+.laura-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.laura-author p {
+  margin-bottom: 0;
+}
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* FLOAT */
+
+/* h1 {
+  float: left;
+}
+nav {
+  float: right;
+  margin-top: 5px;
+} */
+/* we use ::after to clear both when there is no element after floating element but if there is we use the normal clear property */
+/* .main-header::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.laura-img {
+  float: left;
+}
+.author { */
+/* after i have added float left to the text it started now after the img not as the same position as the img */
+/* float: left;
+  padding: 10px;
+}
+article {
+  width: 825px;
+  float: left;
+}
+aside {
+  width: 300px;
+  float: right;
+  padding: 40px;
+}
+footer {
+  clear: both;
+} */
+
+/* FLEXBOX  */
+
+/* 
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.related-post p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.related-link:link {
+  font-size: 19px;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 5px;
+  display: block;
+}
+.row {
+  display: flex;
+  gap: 75px;
+  margin-bottom: 60px;
+}
+aside {
+  align-self: flex-start;
+  flex: 0 0 300px;
+} */
+
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+.main-header {
+  grid-column: 1/-1;
+}
+
+footer {
+  grid-column: 1/-1;
+}
+.related-post {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
